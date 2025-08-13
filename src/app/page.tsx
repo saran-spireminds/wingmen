@@ -16,6 +16,14 @@ const itemVariants: Variants = {
   }),
 };
 
+const values = [
+    { icon: '/icons/Empathy.png', title: 'EMPATHY' },
+    { icon: '/icons/Professionalism.png', title: 'PROFESSIONALISM' },
+    { icon: '/icons/Inclusivity.png', title: 'INCLUSIVITY' },
+    { icon: '/icons/Non-Judgmental.png', title: 'NON-JUDGMENTAL' },
+    { icon: '/icons/Humility.png', title: 'HUMILITY' },
+  ];
+
 export default function Home() {
   return (
     <>
@@ -100,7 +108,7 @@ export default function Home() {
           <motion.p
             className="mt-[16px] text-[16px] sm:text-[16px] md:text-[16px] 
                        lg:text-[16px] xl:text-[18px] 2xl:text-[30px] 
-                       max-w-[700px] font-light text-justify tracking-[0.5px]"
+                       max-w-[700px] 2xl:max-w-[1250px] font-light text-justify tracking-[0.5px]"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -174,7 +182,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            custom={6}
+            custom={1}
           >
             WHAT WE DO
           </motion.h2>
@@ -188,7 +196,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            custom={7}
+            custom={2}
           >
             We are empathetic professionals who will listen with humility and never
             judge. <br />
@@ -205,7 +213,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            custom={8}
+            custom={3}
           >
             “To provide a dedicated phone line where you will be listened to in
             complete anonymity and without judgement.”
@@ -220,7 +228,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            custom={9}
+            custom={4}
           >
             We are here to listen and, where appropriate, provide a signpost to
             the other mental health partners with whom we work.
@@ -232,7 +240,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            custom={10}
+            custom={5}
           >
             <a
               href="#readmore"
@@ -252,7 +260,7 @@ export default function Home() {
               />
               <span
                 className="absolute inset-0 border border-transparent transition-all duration-300 
-                           pointer-events-none group-hover:border-white"
+                           pointer-events-none group-hover:border-[#212121]"
               />
             </a>
           </motion.div>
@@ -288,7 +296,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            custom={6}
+            custom={1}
           >
             WHO WE ARE
           </motion.h2>
@@ -300,7 +308,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            custom={7}
+            custom={2}
           >
             Wingmen comprises a group of men who for various reasons have experienced
             the anguish of life’s darker moments. We have suffered, or we have been
@@ -315,7 +323,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            custom={8}
+            custom={3}
           >
             Our experience has taught us that suffering in silence can be soul
             destroying. We believe that making a connection with another person is
@@ -329,7 +337,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            custom={9}
+            custom={4}
           >
             <a
               href="#readmore"
@@ -379,6 +387,115 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      <section className="relative w-full min-h-screen overflow-hidden flex items-center pt-[80px] sm:pt-[100px] md:pt-[120px] lg:pt-0">
+        {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/Our values.jpg" // replace with your actual background image path
+          alt="Our Values Background"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#212121] opacity-50"></div>
+      </div>
+
+      {/* Section Content */}
+        <div
+          className="relative z-10 flex flex-col justify-center h-full 
+                     px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[80px] 
+                     2xl:px-[120px] text-white text-left"
+        >
+          {/* Section Title */}
+          <motion.h2
+            className="text-[28px] sm:text-[28px] md:text-[36px] lg:text-[36px] xl:text-[60px] 2xl:text-[100px] font-extrabold antialiased tracking-tight uppercase mb-6"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            custom={1}
+          >
+            OUR VALUES
+          </motion.h2>
+
+          {/* Paragraph */}
+          <motion.p
+            className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[15px] 
+                       xl:text-[15px] 2xl:text-[27px] max-w-[450px] sm:max-w-[720px] md:max-w-[800px] lg:max-w-[500px] 
+                     xl:max-w-[800px] 2xl:max-w-[1250px] mb-[24px] font-light 
+                       text-justify leading-relaxed tracking-[0.5px]"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            custom={2}
+          >
+            Our organisation is values-driven. This means that everyone who represents Wingmen shares these values, and uses them as a guide. Our values describe who we are, and are as follows:
+          </motion.p>
+
+          {/* Icons grid */}
+<div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-12 mt-12 mb-12">
+  {values.map((value, index) => (
+    <motion.div
+      key={index}
+      className="flex flex-col items-center text-center"
+      variants={itemVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      custom={index + 2}
+    >
+      <div className="mb-6">
+        <Image
+          src={value.icon}
+          alt={value.title}
+          width={60} // adjust size as needed
+          height={60}
+          className="object-contain"
+        />
+      </div>
+      <h3 className="text-[18px] sm:text-[18px] md:text-[18px] lg:text-[18px] 
+                       xl:text-[20px] 2xl:text-[35px] font-semibold tracking-[1.5px]">
+        {value.title}
+      </h3>
+    </motion.div>
+  ))}
+</div>
+
+
+          {/* Read More Button */}
+          <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            custom={5}
+          >
+            <a
+              href="#readmore"
+              className="relative inline-block px-[24px] py-[20px] 
+                         text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
+                         xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
+                         uppercase border-2 border-white text-[#212121] overflow-hidden 
+                         group transition-all duration-500 ease-in-out"
+            >
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                READ MORE
+              </span>
+              <span
+                className="absolute inset-0 bg-white transition-transform duration-500 
+                           ease-in-out transform translate-x-0 group-hover:translate-x-full"
+                aria-hidden="true"
+              />
+              <span
+                className="absolute inset-0 border border-transparent transition-all duration-300 
+                           pointer-events-none group-hover:border-white"
+              />
+            </a>
+          </motion.div>
+        </div>
+    </section>
     </>
   );
 }
