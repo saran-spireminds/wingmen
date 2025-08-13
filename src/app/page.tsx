@@ -35,15 +35,18 @@ export default function Home() {
 
         {/* Hero Content */}
         <div
-          className="
-            relative z-10 flex flex-col justify-center h-full px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]
-            text-white text-left
-            max-w-[450px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1280px] xl:max-w-[1600px] 2xl:max-w-[2000px]
-          "
+          className="relative z-10 flex flex-col justify-center h-full 
+                     px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] 
+                     xl:px-[80px] 2xl:px-[120px]
+                     text-white text-left
+                     max-w-[450px] sm:max-w-[720px] md:max-w-[960px] 
+                     lg:max-w-[1280px] xl:max-w-[1600px] 2xl:max-w-[2000px]"
         >
           {/* Top Icon */}
           <motion.div
-            className="mt-[16px] mb-[16px] w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[100px] md:h-[100px] lg:w-[100px] lg:h-[100px] 2xl:w-[200px] 2xl:h-[200px]"
+            className="mt-[16px] mb-[16px] w-[80px] h-[80px] sm:w-[80px] sm:h-[80px] 
+                       md:w-[80px] md:h-[80px] lg:w-[100px] lg:h-[100px] 
+                       2xl:w-[200px] 2xl:h-[200px]"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -62,7 +65,9 @@ export default function Home() {
 
           {/* Top Logo */}
           <motion.div
-            className="mb-[16px] w-[300px] h-[53px] sm:w-[450px] sm:h-[80px] md:w-[600px] md:h-[106px] lg:w-[600px] lg:h-[106px] xl:w-[600px] xl:h-[106px] 2xl:w-[1000px] 2xl:h-[158px] hidden md:block"
+            className="mb-[16px] w-[300px] h-[53px] sm:w-[450px] sm:h-[80px] 
+                       md:w-[450px] md:h-[80px] lg:w-[450px] lg:h-[80px] 
+                       xl:w-[600px] xl:h-[106px] 2xl:w-[1000px] 2xl:h-[158px] hidden md:block"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -81,7 +86,8 @@ export default function Home() {
 
           {/* Hero Text */}
           <motion.h1
-            className="text-[35px] sm:text-[50px] md:text-[60px] lg:text-[60px] xl:text-[60px] 2xl:text-[100px] font-bold uppercase"
+            className="text-[35px] sm:text-[40px] md:text-[40px] lg:text-[40px] 
+                       xl:text-[60px] 2xl:text-[100px] font-bold uppercase"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -92,14 +98,18 @@ export default function Home() {
           </motion.h1>
 
           <motion.p
-            className="mt-[16px] text-[15px] sm:text-[18px] md:text-[18px] lg:text-[18px] xl:text-[18px] 2xl:text-[30px] max-w-[700px] lg:max-w-[700px] xl:max-w-[700px] 2xl:max-w-[1200px] font-light text-justify tracking-[0.5px]"
+            className="mt-[16px] text-[16px] sm:text-[16px] md:text-[16px] 
+                       lg:text-[16px] xl:text-[18px] 2xl:text-[30px] 
+                       max-w-[700px] font-light text-justify tracking-[0.5px]"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             custom={4}
           >
-            We are a team of mental health volunteers who understand that by providing you with a connection, we can try and prevent your issues from escalating.
+            We are a team of mental health volunteers who understand that by
+            providing you with a connection, we can try and prevent your issues
+            from escalating.
           </motion.p>
 
           {/* Hero Button */}
@@ -113,22 +123,23 @@ export default function Home() {
           >
             <a
               href="tel:+441135477636"
-              className="
-                relative inline-block px-[24px] py-[20px] text-[16px] sm:text-[18px] md:text-[18px] lg:text-[18px] xl:text-[18px] 2xl:text-[26px]
-                font-heading font-bold tracking-widest border border-white text-[#212121] overflow-hidden group transition-all duration-500 ease-in-out
-              "
+              className="relative inline-block px-[24px] py-[20px] 
+                         text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
+                         xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
+                         uppercase border-2 border-white text-[#212121] overflow-hidden 
+                         group transition-all duration-500 ease-in-out"
             >
               <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
                 CALL US: +44 1135 477636
               </span>
-
               <span
-                className="absolute inset-0 bg-[#ffffff] transition-transform duration-500 ease-in-out transform translate-x-0 group-hover:translate-x-full"
+                className="absolute inset-0 bg-[#ffffff] transition-transform duration-500 
+                           ease-in-out transform translate-x-0 group-hover:translate-x-full"
                 aria-hidden="true"
-              ></span>
-
+              />
               <span
-                className="absolute inset-0 border border-transparent transition-all duration-300 pointer-events-none group-hover:border-white"
+                className="absolute inset-0 border border-transparent transition-all duration-300 
+                           pointer-events-none group-hover:border-white"
               />
             </a>
           </motion.div>
@@ -149,11 +160,16 @@ export default function Home() {
         </div>
 
         {/* Section Content */}
-              <div className="relative z-10 flex flex-col justify-center h-full px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px] text-[#212121] text-left max-w-[450px] sm:max-w-[720px] md:max-w-[800px] lg:max-w-[800px] xl:max-w-[800px] 2xl:max-w-[2000px]">
-
+        <div
+          className="relative z-10 flex flex-col justify-center h-full 
+                     px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[80px] 
+                     2xl:px-[120px] text-[#212121] text-left 
+                     max-w-[450px] sm:max-w-[720px] md:max-w-[800px] lg:max-w-[800px] 
+                     xl:max-w-[800px] 2xl:max-w-[1250px]"
+        >
           {/* Section Title */}
           <motion.h2
-            className="text-[35px] sm:text-[50px] md:text-[60px] lg:text-[60px] xl:text-[60px] 2xl:text-[80px] font-bold uppercase mb-[24px]"
+            className="text-[28px] sm:text-[28px] md:text-[36px] lg:text-[36px] xl:text-[60px] 2xl:text-[100px] font-extrabold antialiased tracking-tight uppercase mb-6"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -165,45 +181,53 @@ export default function Home() {
 
           {/* Paragraph */}
           <motion.p
-            className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[15px] xl:text-[15px] 2xl:text-[27px] mb-[24px] font-light text-justify leading-relaxed tracking-[0.5px]"
+            className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[15px] 
+                       xl:text-[15px] 2xl:text-[27px] mb-[24px] font-light 
+                       text-justify leading-relaxed tracking-[0.5px]"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             custom={7}
           >
-            We are empathetic professionals who will listen with humility and never judge.
-            <br />
-            We provide a completely anonymous space to talk; our mission is as follows:
+            We are empathetic professionals who will listen with humility and never
+            judge. <br />
+            We provide a completely anonymous space to talk; our mission is as
+            follows:
           </motion.p>
 
           {/* Highlighted Content */}
           <motion.p
-            className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[28px] xl:text-[28px] 2xl:text-[30px] font-bold mb-[24px] text-[#707070] leading-normal"
+            className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[28px] 
+                       xl:text-[28px] 2xl:text-[35px] font-bold mb-[24px] text-[#707070] 
+                       leading-normal"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             custom={8}
           >
-            “To provide a dedicated phone line where you will be listened to in complete anonymity and without judgement.”
+            “To provide a dedicated phone line where you will be listened to in
+            complete anonymity and without judgement.”
           </motion.p>
 
           {/* Another Paragraph */}
           <motion.p
-            className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[15px] xl:text-[15px] 2xl:text-[27px] mb-[24px] font-light text-justify leading-relaxed tracking-[0.5px]"
+            className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[15px] 
+                       xl:text-[15px] 2xl:text-[27px] mb-[24px] font-light 
+                       text-justify leading-relaxed tracking-[0.5px]"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             custom={9}
           >
-            We are here to listen and, where appropriate, provide a signpost to the other mental health partners with whom we work.
+            We are here to listen and, where appropriate, provide a signpost to
+            the other mental health partners with whom we work.
           </motion.p>
 
           {/* Read More Button */}
           <motion.div
-            className=""
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
@@ -212,26 +236,148 @@ export default function Home() {
           >
             <a
               href="#readmore"
-              className="
-                relative inline-block px-[24px] py-[20px] text-[16px] sm:text-[18px] md:text-[18px] lg:text-[18px] xl:text-[18px] 2xl:text-[26px]
-                font-heading font-bold tracking-widest uppercase border-2 border-[#212121] text-white overflow-hidden group transition-all duration-500 ease-in-out
-              "
+              className="relative inline-block px-[24px] py-[20px] 
+                         text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
+                         xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
+                         uppercase border-2 border-[#212121] text-white overflow-hidden 
+                         group transition-all duration-500 ease-in-out"
             >
               <span className="relative z-10 transition-colors duration-300 group-hover:text-[#212121]">
                 READ MORE
               </span>
-
               <span
-                className="absolute inset-0 bg-[#212121] transition-transform duration-500 ease-in-out transform translate-x-0 group-hover:translate-x-full"
+                className="absolute inset-0 bg-[#212121] transition-transform duration-500 
+                           ease-in-out transform translate-x-0 group-hover:translate-x-full"
                 aria-hidden="true"
-              ></span>
-
+              />
               <span
-                className="absolute inset-0 border border-transparent transition-all duration-300 pointer-events-none group-hover:border-white"
+                className="absolute inset-0 border border-transparent transition-all duration-300 
+                           pointer-events-none group-hover:border-white"
               />
             </a>
           </motion.div>
         </div>
+      </section>
+
+      {/* WHO WE ARE SECTION */}
+      <section className="relative w-full min-h-screen bg-[#212121] overflow-hidden flex flex-col lg:flex-row pt-[80px] sm:pt-[100px] md:pt-[120px] lg:pt-0">
+        {/* Overlay Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/BG_overlay.svg"
+            alt="Overlay Background"
+            fill
+            priority
+            className="object-cover opacity-20"
+          />
+        </div>
+
+        {/* Left Content */}
+        <div
+          className="relative z-10 flex flex-col justify-center h-full 
+                     px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[80px] 
+                     2xl:px-[120px] text-white text-left 
+                     max-w-[450px] sm:max-w-[720px] md:max-w-[800px] lg:max-w-[500px] 
+                     xl:max-w-[800px] 2xl:max-w-[1250px]
+                     flex-1 min-h-[50vh] lg:min-h-screen"
+        >
+          <motion.h2
+            className="text-[28px] sm:text-[28px] md:text-[36px] lg:text-[36px] xl:text-[60px] 
+                       2xl:text-[100px] font-extrabold antialiased tracking-tight uppercase mb-6"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            custom={6}
+          >
+            WHO WE ARE
+          </motion.h2>
+
+          <motion.p
+            className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[15px] xl:text-[15px] 
+                       2xl:text-[27px] mb-[24px] font-light leading-relaxed tracking-[0.5px]"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            custom={7}
+          >
+            Wingmen comprises a group of men who for various reasons have experienced
+            the anguish of life’s darker moments. We have suffered, or we have been
+            exposed to the suffering of those close to us, and we want to make a
+            difference.
+          </motion.p>
+
+          <motion.p
+            className="text-[15px] sm:text-[15px] md:text-[15px] lg:text-[15px] xl:text-[15px] 
+                       2xl:text-[27px] mb-[24px] font-light leading-relaxed tracking-[0.5px]"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            custom={8}
+          >
+            Our experience has taught us that suffering in silence can be soul
+            destroying. We believe that making a connection with another person is
+            the first step towards finding a resolution, and that connection can
+            prevent an issue from becoming a crisis. Wingmen are here to provide that
+            connection.
+          </motion.p>
+
+          <motion.div
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            custom={9}
+          >
+            <a
+              href="#readmore"
+              className="relative inline-block px-[24px] py-[20px] 
+                         text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
+                         xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
+                         uppercase border-2 border-white text-[#212121] overflow-hidden 
+                         group transition-all duration-500 ease-in-out"
+            >
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                READ MORE
+              </span>
+              <span
+                className="absolute inset-0 bg-white transition-transform duration-500 
+                           ease-in-out transform translate-x-0 group-hover:translate-x-full"
+                aria-hidden="true"
+              />
+              <span
+                className="absolute inset-0 border border-transparent transition-all duration-300 
+                           pointer-events-none group-hover:border-white"
+              />
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Right Side Image */}
+        <motion.div
+          className="relative flex items-center justify-center 
+                     w-full lg:w-1/2 py-8 lg:py-0 
+                     px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px]"
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          custom={5}
+        >
+          <div
+            className="relative w-full max-w-[450px] sm:max-w-[720px] md:max-w-[800px] 
+                       lg:max-w-[500px] xl:max-w-[800px] 2xl:max-w-[1250px] aspect-square"
+          >
+            <Image
+              src="/Who we are.jpg"
+              alt="Who We Are Image"
+              fill
+              className="object-cover rounded-lg"
+            />
+          </div>
+        </motion.div>
       </section>
     </>
   );
