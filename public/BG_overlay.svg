@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   fill="rgba(112,112,112,0.1)"
+   viewBox="0 0 1920 1440"
+   preserveAspectRatio="xMinYMin slice"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="BG_2.svg"
+   inkscape:version="1.3 (0e150ed, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#f9f9f9"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.23177389"
+     inkscape:cx="903.89819"
+     inkscape:cy="692.48525"
+     inkscape:window-width="1472"
+     inkscape:window-height="892"
+     inkscape:window-x="0"
+     inkscape:window-y="64"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3" />
+  <polygon
+     points="389.5,1025.7 389.5,1439.5 1829,0 1415.61,0 "
+     id="polygon1"
+     transform="rotate(180,914.5,719.75)" />
+  <polygon
+     points="390,389.7 390,803.5 1193.5,0 779.86,0 "
+     id="polygon2"
+     transform="rotate(180,914.5,719.75)" />
+  <polygon
+     points="390.5,167.5 558,0 390.5,0 "
+     id="polygon3"
+     transform="rotate(180,914.5,719.75)" />
+</svg>
