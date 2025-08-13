@@ -392,7 +392,7 @@ export default function Home() {
         {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/Our values.jpg" // replace with your actual background image path
+          src="/Our Values.jpg"
           alt="Our Values Background"
           fill
           className="object-cover"
