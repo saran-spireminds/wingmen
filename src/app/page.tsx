@@ -26,10 +26,10 @@ const values = [
 
 const patrons = [
   { name: "Pivotal", logo: "/Pivotal.png" },
-  { name: "Switch Networks", logo: "/patrons/Switch Networks.png" },
-  { name: "Direct Imaging", logo: "/patrons/Direct Imaging.png" },
-  { name: "ABS Foundation", logo: "/patrons/ABS.png" },
-  { name: "Tab", logo: "/patrons/Tab.png" },
+  { name: "Switch Networks", logo: "/Switch Networks.png" },
+  { name: "Direct Imaging", logo: "/Direct Imaging.png" },
+  { name: "ABS Foundation", logo: "/ABS.png" },
+  { name: "Tab", logo: "/Tab.png" },
   // add more patrons here
 ];
 
