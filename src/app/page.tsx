@@ -24,6 +24,15 @@ const values = [
     { icon: '/icons/Humility.png', title: 'HUMILITY' },
   ];
 
+const patrons = [
+  { name: "Pivotal", logo: "/patrons/Pivotal.png" },
+  { name: "Switch Networks", logo: "/patrons/Switch Networks.png" },
+  { name: "Direct Imaging", logo: "/patrons/Direct Imaging.png" },
+  { name: "ABS Foundation", logo: "/patrons/ABS.png" },
+  { name: "Tab", logo: "/patrons/Tab.png" },
+  // add more patrons here
+];
+
 export default function Home() {
   return (
     <>
@@ -928,6 +937,50 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {/* OUR PATRONS SECTION */}
+      <section className="relative w-full min-h-[50vh] bg-[#FFFEED] overflow-hidden py-20">
+        {/* Section Title */}
+        <div className="relative z-10 px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px] text-center text-[#212121] ">
+          <motion.h2
+            className="text-[28px] sm:text-[28px] md:text-[36px] lg:text-[36px] xl:text-[60px] 
+                       2xl:text-[100px] font-extrabold antialiased leading-tight tracking-tight uppercase mb-6"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            custom={1}
+          >
+            OUR PATRONS
+          </motion.h2>
+        </div>
+        
+        {/* Logos Slider */}
+        <div className="relative z-10 overflow-hidden">
+          <motion.div
+    className="flex justify-center items-center gap-25 xl:gap-40 2xl:gap-75 mt-[50px] xl:mt-[70px] 2xl:mt-[100px] px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[100px] 2xl:px-[220px]"
+    initial={{ x: "100%" }}
+    animate={{ x: "-100%" }}
+    transition={{ repeat: Infinity, repeatType: "loop", duration: 30, ease: "linear" }}
+  >
+    {patrons.concat(patrons).map((patron, index) => (
+      <div
+        key={index}
+        className="flex-shrink-0 w-[120px] sm:w-[150px] md:w-[180px] lg:w-[200px] xl:w-[220px]"
+      >
+        <Image
+          src={patron.logo} // your public folder path
+          alt={patron.name}
+          width={220}
+          height={100}
+          className="object-contain"
+        />
+      </div>
+    ))}
+  </motion.div>
+        </div>
+      </section>
+
     </>
   );
 }
