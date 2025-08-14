@@ -25,7 +25,7 @@ const values = [
   ];
 
 const patrons = [
-  { name: "Pivotal", logo: "/patrons/Pivotal.png" },
+  { name: "Pivotal", logo: "/Pivotal.png" },
   { name: "Switch Networks", logo: "/patrons/Switch Networks.png" },
   { name: "Direct Imaging", logo: "/patrons/Direct Imaging.png" },
   { name: "ABS Foundation", logo: "/patrons/ABS.png" },
