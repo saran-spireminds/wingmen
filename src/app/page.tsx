@@ -958,10 +958,10 @@ export default function Home() {
         {/* Logos Slider */}
         <div className="relative z-10 overflow-hidden">
           <motion.div
-    className="flex justify-center items-center gap-25 xl:gap-40 2xl:gap-75 mt-[50px] xl:mt-[70px] 2xl:mt-[100px] px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[100px] 2xl:px-[220px]"
+    className="flex justify-center items-center gap-25 xl:gap-40 2xl:gap-75 mt-[50px] xl:mt-[70px] 2xl:mt-[100px] px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[100px] 2xl:px-[180px]"
     initial={{ x: "100%" }}
     animate={{ x: "-100%" }}
-    transition={{ repeat: Infinity, repeatType: "loop", duration: 30, ease: "linear" }}
+    transition={{ repeat: Infinity, repeatType: "loop", duration: 60, ease: "linear" }}
   >
     {patrons.concat(patrons).map((patron, index) => (
       <div
