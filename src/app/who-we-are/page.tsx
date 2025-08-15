@@ -456,7 +456,7 @@ export default function Home() {
             {/* Background image */}
             <div className="absolute inset-0">
                 <Image
-                    src="/Our Trustees.jpg"
+                    src="/our-trustees.jpg"
                     alt="Our Trustees Background"
                     fill
                     className="object-cover object-bottom"
