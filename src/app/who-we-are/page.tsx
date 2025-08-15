@@ -28,7 +28,7 @@ export default function Home() {
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full -z-10">
           <Image
-            src="/who_we_are_bg.jpg"
+            src="/who-we-are.jpg"
             alt="Hero Background"
             fill
             priority
@@ -547,7 +547,7 @@ export default function Home() {
             {/* Background image */}
             <div className="absolute inset-0">
                 <Image
-                    src="/BG_Volunteer.jpg"
+                    src="/our-ethos.jpg"
                     alt="Our Ethos Background"
                     fill
                     className="object-cover object-bottom"
