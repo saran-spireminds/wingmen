@@ -152,7 +152,7 @@ export default function WhoWeAreClient() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
-            custom={2}
+            custom={3}
           >
             Wingmen comprises a group of men who, for various reasons, have
             experienced the anguish of life’s darker moments. We have suffered
