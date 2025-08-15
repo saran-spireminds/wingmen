@@ -345,115 +345,114 @@ export default function FundraisingClient() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
-              custom={2}
+              custom={7}
             >
               Patrons have committed to an annual fee and are able to support Wingmen at 
               one of three levels:
           </motion.p>
 
           {/* Patron Table */}
-<motion.div
-  className="relative z-10 px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px] overflow-x-auto"
-  variants={itemVariants}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.1 }}
-  custom={3}
->
-  <table className="min-w-full border-collapse border border-gray-300 text-white text-[14px] 2xl:text-[25px] mb-[75px]">
-    <thead>
-      <tr>
-        <th className="border border-gray-500 px-4 py-4 w-[1000px] sm:w-[800px] text-[15px] 2xl:text-[30px] font-bold">
-          Cost per annum
-        </th>
-        <th className="border border-gray-500 px-4 py-4 w-[200px] text-[15px] 2xl:text-[30px] font-bold">
-          £250 – £1000
-        </th>
-        <th className="border border-gray-500 px-4 py-4 w-[200px] text-[15px] 2xl:text-[30px] font-bold">
-          £1000 – £5000
-        </th>
-        <th className="border border-gray-500 px-4 py-4 w-[200px] text-[15px] 2xl:text-[30px] font-bold">
-          £5000 +
-        </th>
-      </tr>
-      <tr className="bg-[#2B2B2B]">
-        <td className="border border-gray-500 px-4 py-4"></td>
-        <td className="border border-gray-500 px-4 py-4 text-center font-semibold w-[200px]">
-          Flight Lieutenant
-        </td>
-        <td className="border border-gray-500 px-4 py-4 text-center font-semibold w-[200px]">
-          Squadron Leader
-        </td>
-        <td className="border border-gray-500 px-4 py-4 text-center font-semibold w-[200px]">
-          Wing Commander
-        </td>
-      </tr>
-    </thead>
-    <tbody>
-      {[
-        ["Wingmen Patron certificate", "✔", "✔", "✔"],
-        ["Your logo and link to your website on our website", "✔", "✔", "✔"],
-        ["Your logo and business featured in all our presentations", "✔", "✔", "✔"],
-        ["Your logo and link to your website in our email newsletter", "", "", "✔"],
-        ["Digital assets incl. email signature, socials, web banners etc…", "", "", "✔"],
-        ["Social media post promoting your patronage", "", "", "✔"],
-        ["Event sponsorship opportunities", "", "", "✔"],
-        ["Referrals to your business through our networking", "", "", "✔"],
-        ["A feature blog on our website about you and your business", "", "✔", "✔"],
-        ["Exclusive invitation to successful local business networking group", "", "✔", "✔"],
-        ["Annual social media posts about the service or product your business offers", "", "", "✔"],
-        ["Merchandise 1 Tee-Shirt", "✔", "", ""],
-        ["Merchandise 2 Tee-Shirt plus Hoodie", "", "✔", ""],
-        ["Merchandise 3 Tee-Shirt + Hoodie x5", "", "", "✔"],
-        ["Annual CIC Gala: One Table of Eight FOC", "", "", "✔"],
-        ["Annual CIC Gala: Two seats FOC", "", "", "✔"],
-        ["Annual CIC Gala: Two seats FOC", "", "✔", ""],
-        ["Wingmen metal pin badge", "", "", "✔"],
-      ].map((row, idx) => (
-        <tr key={idx} className={idx % 2 === 1 ? "bg-[#2B2B2B]" : ""}>
-          <td className="border border-gray-500 px-4 py-4">{row[0]}</td>
-          <td className="border border-gray-500 px-4 py-4 text-center w-[200px]">{row[1]}</td>
-          <td className="border border-gray-500 px-4 py-4 text-center w-[200px]">{row[2]}</td>
-          <td className="border border-gray-500 px-4 py-4 text-center w-[200px]">{row[3]}</td>
-        </tr>
-      ))}
-      <tr>
-        <td className="border border-gray-500 p-4"></td>
-        <td className="border p-4 text-center w-[200px]">
-          <a
-            href="https://example.com/donate1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-[#212121] uppercase font-bold px-4 py-2 hover:bg-gray-500 hover:text-white transition"
+          <motion.div
+            className="relative z-10 px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px] xl:px-[80px] 2xl:px-[120px] overflow-x-auto"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            custom={8}
           >
-            Donate Now
-          </a>
-        </td>
-        <td className="border p-4 text-center w-[200px]">
-          <a
-            href="https://example.com/donate2"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-[#212121] uppercase font-bold px-4 py-2 hover:bg-gray-500 hover:text-white transition"
-          >
-            Donate Now
-          </a>
-        </td>
-        <td className="border p-4 text-center w-[200px]">
-          <a
-            href="https://example.com/donate3"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-[#212121] uppercase font-bold px-4 py-2 hover:bg-gray-500 hover:text-white transition"
-          >
-            Donate Now
-          </a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</motion.div>
-
+            <table className="min-w-full border-collapse border border-gray-300 text-white text-[14px] 2xl:text-[25px] mb-[75px]">
+              <thead>
+                <tr>
+                  <th className="border border-gray-500 px-4 py-4 w-[1000px] sm:w-[800px] text-[15px] 2xl:text-[30px] font-bold">
+                    Cost per annum
+                  </th>
+                  <th className="border border-gray-500 px-4 py-4 w-[200px] text-[15px] 2xl:text-[30px] font-bold">
+                    £250 – £1000
+                  </th>
+                  <th className="border border-gray-500 px-4 py-4 w-[200px] text-[15px] 2xl:text-[30px] font-bold">
+                    £1000 – £5000
+                  </th>
+                  <th className="border border-gray-500 px-4 py-4 w-[200px] text-[15px] 2xl:text-[30px] font-bold">
+                    £5000 +
+                  </th>
+                </tr>
+                <tr className="bg-[#2B2B2B]">
+                  <td className="border border-gray-500 px-4 py-4"></td>
+                  <td className="border border-gray-500 px-4 py-4 text-center font-semibold w-[200px]">
+                    Flight Lieutenant
+                  </td>
+                  <td className="border border-gray-500 px-4 py-4 text-center font-semibold w-[200px]">
+                    Squadron Leader
+                  </td>
+                  <td className="border border-gray-500 px-4 py-4 text-center font-semibold w-[200px]">
+                    Wing Commander
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Wingmen Patron certificate", "✔", "✔", "✔"],
+                  ["Your logo and link to your website on our website", "✔", "✔", "✔"],
+                  ["Your logo and business featured in all our presentations", "✔", "✔", "✔"],
+                  ["Your logo and link to your website in our email newsletter", "", "", "✔"],
+                  ["Digital assets incl. email signature, socials, web banners etc…", "", "", "✔"],
+                  ["Social media post promoting your patronage", "", "", "✔"],
+                  ["Event sponsorship opportunities", "", "", "✔"],
+                  ["Referrals to your business through our networking", "", "", "✔"],
+                  ["A feature blog on our website about you and your business", "", "✔", "✔"],
+                  ["Exclusive invitation to successful local business networking group", "", "✔", "✔"],
+                  ["Annual social media posts about the service or product your business offers", "", "", "✔"],
+                  ["Merchandise 1 Tee-Shirt", "✔", "", ""],
+                  ["Merchandise 2 Tee-Shirt plus Hoodie", "", "✔", ""],
+                  ["Merchandise 3 Tee-Shirt + Hoodie x5", "", "", "✔"],
+                  ["Annual CIC Gala: One Table of Eight FOC", "", "", "✔"],
+                  ["Annual CIC Gala: Two seats FOC", "", "", "✔"],
+                  ["Annual CIC Gala: Two seats FOC", "", "✔", ""],
+                  ["Wingmen metal pin badge", "", "", "✔"],
+                ].map((row, idx) => (
+                  <tr key={idx} className={idx % 2 === 1 ? "bg-[#2B2B2B]" : ""}>
+                    <td className="border border-gray-500 px-4 py-4">{row[0]}</td>
+                    <td className="border border-gray-500 px-4 py-4 text-center w-[200px]">{row[1]}</td>
+                    <td className="border border-gray-500 px-4 py-4 text-center w-[200px]">{row[2]}</td>
+                    <td className="border border-gray-500 px-4 py-4 text-center w-[200px]">{row[3]}</td>
+                  </tr>
+                ))}
+                <tr>
+                  <td className="border border-gray-500 p-4"></td>
+                  <td className="border p-4 text-center w-[200px]">
+                    <a
+                      href="https://example.com/donate1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-white text-[#212121] uppercase font-bold px-4 py-2 hover:bg-gray-500 hover:text-white transition"
+                    >
+                      Donate Now
+                    </a>
+                  </td>
+                  <td className="border p-4 text-center w-[200px]">
+                    <a
+                      href="https://example.com/donate2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-white text-[#212121] uppercase font-bold px-4 py-2 hover:bg-gray-500 hover:text-white transition"
+                    >
+                      Donate Now
+                    </a>
+                  </td>
+                  <td className="border p-4 text-center w-[200px]">
+                    <a
+                      href="https://example.com/donate3"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-white text-[#212121] uppercase font-bold px-4 py-2 hover:bg-gray-500 hover:text-white transition"
+                    >
+                      Donate Now
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </motion.div>
       </section>
     </>
   );
