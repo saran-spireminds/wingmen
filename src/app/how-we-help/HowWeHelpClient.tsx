@@ -207,7 +207,13 @@ export default function HowWeHelpClient() {
 
         {/* Multiple Logo + Title Lines */}
 <div className="flex flex-col gap-2 ml-6 mb-8">
-  <div className="flex items-center gap-4">
+  <motion.div className="flex items-center gap-4"
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.05 }}
+    custom={1}
+  >
     <Image
       src="/Wingmen Icon Black.svg"
       alt="Wingmen Logo"
@@ -218,9 +224,15 @@ export default function HowWeHelpClient() {
     <h4 className="text-[#212121] uppercase text-[18px] 2xl:text-[40px] xl:ml-4 font-bold">
       Social Anxiety
     </h4>
-  </div>
+  </motion.div>
 
-  <div className="flex items-center gap-4">
+  <motion.div className="flex items-center gap-4"
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.05 }}
+    custom={2}
+  >
     <Image
       src="/Wingmen Icon Black.svg"
       alt="Wingmen Logo"
@@ -231,9 +243,15 @@ export default function HowWeHelpClient() {
     <h4 className="text-[#212121] uppercase text-[18px] 2xl:text-[40px] xl:ml-4 font-bold">
       Anger or Frustration
     </h4>
-  </div>
+  </motion.div>
 
-  <div className="flex items-center gap-4">
+  <motion.div className="flex items-center gap-4"
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.05 }}
+    custom={3}
+  >
     <Image
       src="/Wingmen Icon Black.svg"
       alt="Wingmen Logo"
@@ -244,9 +262,15 @@ export default function HowWeHelpClient() {
     <h4 className="text-[#212121] uppercase text-[18px] 2xl:text-[40px] xl:ml-4 font-bold">
       Feelings of Rejection
     </h4>
-  </div>
+  </motion.div>
 
-  <div className="flex items-center gap-4">
+  <motion.div className="flex items-center gap-4"
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.05 }}
+    custom={4}
+  >
     <Image
       src="/Wingmen Icon Black.svg"
       alt="Wingmen Logo"
@@ -257,9 +281,15 @@ export default function HowWeHelpClient() {
     <h4 className="text-[#212121] uppercase text-[18px] 2xl:text-[40px] xl:ml-4 font-bold">
       Feelings of Remorse or Guilt
     </h4>
-  </div>
+  </motion.div>
 
-  <div className="flex items-center gap-4">
+  <motion.div className="flex items-center gap-4"
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.05 }}
+    custom={5}
+  >
     <Image
       src="/Wingmen Icon Black.svg"
       alt="Wingmen Logo"
@@ -270,9 +300,15 @@ export default function HowWeHelpClient() {
     <h4 className="text-[#212121] uppercase text-[18px] 2xl:text-[40px] xl:ml-4 font-bold">
       Low Self-Esteem
     </h4>
-  </div>
+  </motion.div>
 
-  <div className="flex items-center gap-4">
+  <motion.div className="flex items-center gap-4"
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.05 }}
+    custom={6}
+  >
     <Image
       src="/Wingmen Icon Black.svg"
       alt="Wingmen Logo"
@@ -283,9 +319,15 @@ export default function HowWeHelpClient() {
     <h4 className="text-[#212121] uppercase text-[18px] 2xl:text-[40px] xl:ml-4 font-bold">
       Low Motivation
     </h4>
-  </div>
+  </motion.div>
 
-  <div className="flex items-center gap-4">
+  <motion.div className="flex items-center gap-4"
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.05 }}
+    custom={7}
+  >
     <Image
       src="/Wingmen Icon Black.svg"
       alt="Wingmen Logo"
@@ -296,9 +338,15 @@ export default function HowWeHelpClient() {
     <h4 className="text-[#212121] uppercase text-[18px] 2xl:text-[40px] xl:ml-4 font-bold">
       Trouble Sleeping
     </h4>
-  </div>
+  </motion.div>
 
-  <div className="flex items-center gap-4">
+  <motion.div className="flex items-center gap-4"
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.05 }}
+    custom={8}
+  >
     <Image
       src="/Wingmen Icon Black.svg"
       alt="Wingmen Logo"
@@ -309,9 +357,15 @@ export default function HowWeHelpClient() {
     <h4 className="text-[#212121] uppercase text-[18px] 2xl:text-[40px] xl:ml-4 font-bold">
       Low Mood and Depression
     </h4>
-  </div>
+  </motion.div>
 
-  <div className="flex items-center gap-4">
+  <motion.div className="flex items-center gap-4"
+    variants={itemVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.05 }}
+    custom={9}
+  >
     <Image
       src="/Wingmen Icon Black.svg"
       alt="Wingmen Logo"
@@ -322,7 +376,7 @@ export default function HowWeHelpClient() {
     <h4 className="text-[#212121] uppercase text-[18px] 2xl:text-[40px] xl:ml-4 font-bold">
       Loneliness
     </h4>
-  </div>
+  </motion.div>
 </div>
 
 
@@ -335,7 +389,7 @@ export default function HowWeHelpClient() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          custom={7}
+          custom={10}
         >
           If any of these sound familiar, we would invite you to get in touch. Even if these don’t sound familiar, but you have the feeling that something isn’t right, then also please give us a call.
         </motion.p>
