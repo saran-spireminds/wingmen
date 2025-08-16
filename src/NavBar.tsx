@@ -86,7 +86,7 @@ export default function NavBar() {
         {[
           { href: '/', label: 'Home' },
           { href: '/who-we-are', label: 'Who We Are' },
-          { href: '/how-we-help', label: 'What We Do' },
+          { href: '/how-we-help', label: 'How We Help' },
           { href: '/fundraising', label: 'Fundraising' },
           { href: '/our-patrons', label: 'Our Patrons' },
           { href: '/partners', label: 'Partners' },
