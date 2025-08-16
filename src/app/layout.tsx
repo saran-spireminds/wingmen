@@ -1,5 +1,4 @@
 import './globals.css';
-import Image from 'next/image';
 import NavBar from '@/NavBar';
 
 export const metadata = {
