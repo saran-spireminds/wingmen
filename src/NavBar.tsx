@@ -96,7 +96,7 @@ export default function NavBar() {
           <Link
             key={item.href}
             href={item.href}
-            className="text-[40px] font-extrabold uppercase tracking-wide hover:underline"
+            className="text-[20px] md:text-[40px] font-extrabold uppercase tracking-wide hover:underline"
             onClick={() => setIsMenuOpen(false)}
           >
             {item.label}
