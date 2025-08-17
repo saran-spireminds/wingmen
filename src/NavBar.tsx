@@ -19,7 +19,7 @@ export default function NavBar() {
 
   return (
     <>
-      {/* Hamburger Button */}
+      {/* Hamburger Button (always visible) */}
       <button
         onClick={() => setIsMenuOpen(true)}
         className={`fixed top-5 left-6 w-14 h-14 flex items-center justify-center rounded-full 
@@ -29,7 +29,7 @@ export default function NavBar() {
         <span
           className={`absolute -inset-3 rounded-full bg-white transition-all duration-300 ease-out
                       ${isScrolled
-                        ? 'opacity-100 scale-110 shadow-lg'
+                        ? 'opacity-100 scale-110 shadow-lg' // bigger circle + shadow after scroll
                         : 'opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-lg'}`}
         />
 
@@ -65,11 +65,10 @@ export default function NavBar() {
 
       {/* SLIDE-IN / SLIDE-OUT MENU */}
       <div
-        className={`fixed inset-0 bg-[#212121] text-white flex flex-col items-start justify-start px-12 pt-24 gap-6 
-                    transition-transform duration-[400ms] z-[9999]
+        className={`fixed inset-0 bg-[#212121] text-white flex flex-col items-start justify-start px-12 pt-24 gap-6 z-[9999]
                     ${isMenuOpen
-                      ? 'translate-y-0 pointer-events-auto'
-                      : '-translate-y-full pointer-events-none'}`}
+                      ? 'translate-y-0 transition-transform duration-[400ms]'
+                      : '-translate-y-full transition-transform duration-[400ms]'}`}
       >
         {/* Close Button */}
         <button
@@ -97,7 +96,7 @@ export default function NavBar() {
           <Link
             key={item.href}
             href={item.href}
-            className="text-[18px] sm:text-[22px] md:text-[36px] font-extrabold uppercase tracking-wide hover:underline"
+            className="text-[20px] md:text-[40px] font-extrabold uppercase tracking-wide hover:underline"
             onClick={() => setIsMenuOpen(false)}
           >
             {item.label}
