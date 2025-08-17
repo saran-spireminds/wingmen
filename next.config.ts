@@ -1,14 +1,15 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
-        pathname: '/uploads/**',
+        protocol: 'https',
+        hostname: 'inspired-smile-a787e5587c.media.strapiapp.com',
+        port: '',
+        pathname: '/**',
       },
     ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

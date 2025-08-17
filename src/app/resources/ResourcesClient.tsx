@@ -51,8 +51,8 @@ export default function ResourcesClient() {
           description: item.description,
           slug: item.slug,
           cover: item.cover
-            ? { url: `${STRAPI_URL}${item.cover.url}` }
-            : undefined,
+  ? { url: item.cover.url.startsWith('http') ? item.cover.url : `${STRAPI_URL}${item.cover.url}` }
+  : undefined
         }));
 
         setKnowledgeBaseArticles(articles);
