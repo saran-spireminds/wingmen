@@ -291,6 +291,90 @@ export default function ResourcesClient() {
         </div>
       </section>
 
+{/* KNOWLEDGE BASE SECTION */}
+      <section className="relative w-full md:h-screen md:overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="/BG_volunteer.jpg"
+            alt="Knowledge Base Background"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#212121] opacity-50"></div>
+        </div>
+
+        <div
+          className="relative z-10 flex flex-col justify-center md:h-full
+                     px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px]
+                     xl:px-[80px] 2xl:px-[120px]
+                     text-white text-left
+                     max-w-[450px] sm:max-w-[720px] md:max-w-[800px]
+                     lg:max-w-[800px] xl:max-w-[800px] 2xl:max-w-[1250px]"
+        >
+          <motion.h2
+            className="mt-[25px] text-[28px] sm:text-[28px] md:text-[36px]
+                       lg:text-[36px] xl:text-[60px] 2xl:text-[100px]
+                       font-extrabold antialiased tracking-tight uppercase mb-6"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            custom={1}
+          >
+            KNOWLEDGE BASE
+          </motion.h2>
+
+          <motion.p
+            className="text-[15px] sm:text-[15px] md:text-[15px]
+                       lg:text-[15px] xl:text-[15px] 2xl:text-[27px]
+                       mb-[24px] font-light text-justify
+                       leading-relaxed tracking-[0.5px]"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            custom={2}
+          >
+            We know that understanding can be an important part of being able to 
+            deal with things. As such, we have authored these articles that intend 
+            to share knowledge around mental health:
+          </motion.p>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {knowledgeBaseArticles.map((article, index) => (
+              <motion.div
+                key={article.id}
+                className="p-6 border rounded-lg bg-white text-black shadow-sm hover:shadow-md transition"
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                custom={3 + index * 0.2}
+              >
+                {article.cover && (
+                  <Image
+                    src={article.cover.url}
+                    alt={article.title}
+                    width={500}
+                    height={300}
+                    className="mb-4 object-cover rounded"
+                  />
+                )}
+                <h4 className="text-xl font-semibold mb-2">{article.title}</h4>
+                <p className="text-gray-700 mb-4">{article.description}</p>
+                <a
+                  href={`/knowledge-base/${article.slug}`}
+                  className="text-[#212121] font-medium underline"
+                >
+                  Read More →
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* BLOGS SECTION */}
       {/* ...keep your blogs section unchanged... */}
     </>
