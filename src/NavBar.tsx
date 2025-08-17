@@ -65,7 +65,7 @@ export default function NavBar() {
 
       {/* SLIDE-IN / SLIDE-OUT MENU */}
       <div
-        className={`fixed inset-0 bg-[#212121] text-white flex flex-col items-start justify-start px-12 pt-24 gap-6 z-[9999]
+        className={`fixed inset-0 bg-[#292929] text-white flex flex-col items-start justify-start px-12 pt-24 gap-6 z-[9999]
                     ${isMenuOpen
                       ? 'translate-y-0 transition-transform duration-[400ms]'
                       : '-translate-y-full transition-transform duration-[400ms]'}`}
