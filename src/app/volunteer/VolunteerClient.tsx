@@ -28,8 +28,8 @@ export default function VolunteerClient() {
         {/* Background Image */}
         <div className="absolute inset-0 w-full h-full -z-10">
           <Image
-            src="/partners-bg.jpg"
-            alt="Partners Background"
+            src="/volunteer-bg.jpg"
+            alt="Volunteer Background"
             fill
             priority
             className="object-cover object-[center] lg:object-[center_-200px]"
