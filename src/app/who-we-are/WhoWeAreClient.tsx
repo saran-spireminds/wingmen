@@ -214,7 +214,7 @@ export default function WhoWeAreClient() {
       </section>
       
         {/* OUR VALUES SECTION */}
-        <section className="relative w-full bg-[#212121] overflow-hidden">
+        <section id="our-values" className="relative w-full bg-[#212121] overflow-hidden">
             {/* Overlay Image */}
             <div className="absolute inset-0 w-full h-full z-10">
                 <Image

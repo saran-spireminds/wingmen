@@ -356,7 +356,7 @@ export default function OurPatronsClient() {
               viewport={{ once: true, amount: 0.2 }}
               custom={2}
             >
-              SWITCH NETWOKS
+              SWITCH NETWORKS
             </motion.h3>
 
             <motion.h3
