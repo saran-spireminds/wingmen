@@ -211,8 +211,8 @@ export default function ResourcesClient() {
       <section className="relative w-full md:h-screen md:overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/Bg_volunteer.jpg"
-            alt="Overlay Background"
+            src="/BG_volunteer.jpg"
+            alt="Knowledge Base Background"
             fill
             priority
             className="object-cover"
