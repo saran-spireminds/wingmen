@@ -236,7 +236,7 @@ export default function ResourcesClient() {
           className="relative z-10 flex flex-col justify-center md:h-full
                      px-[16px] sm:px-[32px] md:px-[48px] lg:px-[64px]
                      xl:px-[80px] 2xl:px-[120px]
-                     text-white text-left mt-25 mb-25"
+                     text-white text-left xl:mt-25 xl:mb-25"
         >
           {/* Narrow content wrapper for title + paragraph */}
           <div className="max-w-[630px]">
