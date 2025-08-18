@@ -929,7 +929,7 @@ export default function Home() {
                        lg:max-w-[500px] xl:max-w-[800px] 2xl:max-w-[1250px] aspect-square"
           >
             <Image
-              src="/fundraising.jpg"
+              src="/partner-wingmen.jpg"
               alt="Partner with Wingmen Image"
               fill
               className="object-cover rounded-lg"
