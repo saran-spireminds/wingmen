@@ -20,8 +20,22 @@ const itemVariants: Variants = {
   }),
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type Article = any;
+// Define proper types instead of any
+type ArticleBlock = {
+  body: string;
+};
+
+type Article = {
+  title: string;
+  cover?: {
+    url?: string;
+    formats?: {
+      large?: { url: string };
+    };
+  };
+  blocks?: ArticleBlock[];
+};
+
 type ArticleContentClientProps = {
   article: Article;
   coverUrl: string;
@@ -139,7 +153,7 @@ export default function ArticleContentClient({ article }: ArticleContentClientPr
           >
             {article.blocks?.length ? (
               <div className="space-y-6">
-                {article.blocks.map((block: any, index: number) => (
+                {article.blocks.map((block: ArticleBlock, index: number) => (
                   <motion.div
                     key={index}
                     variants={itemVariants}
@@ -158,22 +172,12 @@ export default function ArticleContentClient({ article }: ArticleContentClientPr
                             {children}
                           </p>
                         ),
-                        ul: ({ children }) => (
-                          <ul className="list-disc ml-6 mb-4">{children}</ul>
-                        ),
-                        ol: ({ children }) => (
-                          <ol className="list-decimal ml-6 mb-4">{children}</ol>
-                        ),
+                        ul: ({ children }) => <ul className="list-disc ml-6 mb-4">{children}</ul>,
+                        ol: ({ children }) => <ol className="list-decimal ml-6 mb-4">{children}</ol>,
                         li: ({ children }) => <li className="mb-2">{children}</li>,
-                        h1: ({ children }) => (
-                          <h1 className="text-2xl font-bold mb-4">{children}</h1>
-                        ),
-                        h2: ({ children }) => (
-                          <h2 className="text-xl font-bold mb-3">{children}</h2>
-                        ),
-                        h3: ({ children }) => (
-                          <h3 className="text-lg font-bold mb-2">{children}</h3>
-                        ),
+                        h1: ({ children }) => <h1 className="text-2xl font-bold mb-4">{children}</h1>,
+                        h2: ({ children }) => <h2 className="text-xl font-bold mb-3">{children}</h2>,
+                        h3: ({ children }) => <h3 className="text-lg font-bold mb-2">{children}</h3>,
                       }}
                     >
                       {block.body}
