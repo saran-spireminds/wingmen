@@ -163,25 +163,34 @@ export default function ArticleContentClient({ article }: ArticleContentClientPr
                     custom={index + 2}
                   >
                     <ReactMarkdown
-                      remarkPlugins={[remarkGfm]}
-                      components={{
-                        p: ({ children }) => (
-                          <p className="mb-4 text-[15px] sm:text-[15px] md:text-[15px]
-                                        lg:text-[15px] xl:text-[15px] 2xl:text-[27px]
-                                        font-light leading-relaxed tracking-[0.5px]">
-                            {children}
-                          </p>
-                        ),
-                        ul: ({ children }) => <ul className="list-disc ml-6 mb-4">{children}</ul>,
-                        ol: ({ children }) => <ol className="list-decimal ml-6 mb-4">{children}</ol>,
-                        li: ({ children }) => <li className="mb-2">{children}</li>,
-                        h1: ({ children }) => <h1 className="text-2xl font-bold mb-4">{children}</h1>,
-                        h2: ({ children }) => <h2 className="text-xl font-bold mb-3">{children}</h2>,
-                        h3: ({ children }) => <h3 className="text-lg font-bold mb-2">{children}</h3>,
-                      }}
-                    >
-                      {block.body}
-                    </ReactMarkdown>
+  remarkPlugins={[remarkGfm]}
+  components={{
+    p: ({ children }) => (
+      <p
+        className="mb-4 text-[15px] sm:text-[15px] md:text-[15px]
+                   lg:text-[15px] xl:text-[15px] 2xl:text-[27px]
+                   font-light leading-relaxed tracking-[0.5px]"
+      >
+        {children}
+      </p>
+    ),
+    ul: ({ children }) => <ul className="list-disc ml-6 mb-4">{children}</ul>,
+    ol: ({ children }) => <ol className="list-decimal ml-6 mb-4">{children}</ol>,
+    li: ({ children }) => <li className="font-light ml-4">{children}</li>,
+    h1: ({ children }) => <h1 className="text-2xl font-bold mb-4">{children}</h1>,
+    h2: ({ children }) => <h2 className="text-xl font-bold mb-3">{children}</h2>,
+    h3: ({ children }) => <h3 className="text-lg font-bold mb-2">{children}</h3>,
+    a: ({ children, href }) => (
+      <a href={href} className="font-bold underline text-[#212121]">
+        {children}
+      </a>
+    ),
+  }}
+>
+  {block.body}
+</ReactMarkdown>
+
+
                   </motion.div>
                 ))}
               </div>
