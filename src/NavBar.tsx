@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import ContactForm from '@/components/ContactForm';
+import ContactClient from '@/app/contact/ContactClient';
 import Modal from '@/components/modal';
-import { EnvelopeIcon } from '@heroicons/react/24/solid';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,25 +29,29 @@ export default function NavBar() {
         : 'opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-lg'
     }`;
 
+    const [isHover, setIsHover] = useState(false);
+
   return (
     <>
-      {/* Contact Icon Button */}
       <button
-        onClick={() => setIsContactOpen(true)}
-        className={`${floatingButtonClass} top-5 right-6`}
-      >
-        <span className={floatingCircleClass(isScrolled)} />
-        <EnvelopeIcon
-          className={`w-8 h-8 relative z-10 transition-transform duration-300 ${
-            isScrolled ? 'stroke-black group-hover:scale-110' : 'stroke-white group-hover:stroke-black group-hover:scale-110'
-          }`}
-        />
-      </button>
+  onClick={() => setIsContactOpen(true)}
+  className={`${floatingButtonClass} top-5 right-6`}
+  onMouseEnter={() => setIsHover(true)}
+  onMouseLeave={() => setIsHover(false)}
+>
+  <span className={floatingCircleClass(isScrolled)} />
+  <EnvelopeIcon
+    className={`w-8 h-8 relative z-10 transition-transform duration-300`}
+    style={{
+      stroke: isScrolled || isHover ? '#212121' : '#FFFFFF', // stroke logic
+      transform: isHover ? 'scale(1.1)' : 'scale(1)',       // hover expansion
+    }}
+  />
+</button>
 
       {/* Contact Modal */}
       <Modal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)}>
-        <h2 className="text-xl font-bold mb-4">Contact Us</h2>
-        <ContactForm />
+        <ContactClient />
       </Modal>
 
       {/* Hamburger Button */}
