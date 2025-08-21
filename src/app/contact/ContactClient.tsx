@@ -56,7 +56,7 @@ export default function ContactClient() {
     <div className="w-full flex flex-col gap-1 text-left px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14">
       {/* Animated Title */}
       <motion.h2
-        className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[60px] font-extrabold antialiased tracking-tight uppercase text-white text-left "
+        className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[48px] xl:text-[60px] font-extrabold antialiased tracking-tight uppercase text-white text-left"
         variants={itemVariants}
         initial="hidden"
         whileInView="visible"
@@ -81,7 +81,7 @@ export default function ContactClient() {
       {/* Animated Form */}
       <motion.form
         onSubmit={handleSubmit}
-        className="relative w-full max-w-3xl flex flex-col gap-2 p-4 sm:p-6 md:p-8 rounded-lg border border-gray-300 bg-white/10 backdrop-blur-sm"
+        className="relative w-full max-w-3xl flex flex-col gap-2 p-4 sm:p-6 md:p-8 rounded-lg border border-gray-300 bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm"
         variants={itemVariants}
         initial="hidden"
         whileInView="visible"
@@ -91,26 +91,28 @@ export default function ContactClient() {
         {/* First and Surname */}
         <div className="flex flex-col sm:flex-row gap-2">
           <div className="flex-1 flex flex-col">
-            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text=[20px]">First Name*</label>
-            <input
-              type="text"
-              name="firstName"
-              placeholder="John"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text=[20px]"
-            />
+            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">
+  First Name{" "}<span className="text-red-500">*</span>
+</label>
+<input
+  type="text"
+  name="firstName"
+  placeholder="John"
+  value={formData.firstName}
+  onChange={handleChange}
+  required
+  className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text-[20px]"
+/>
           </div>
           <div className="flex-1 flex flex-col">
-            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text=[20px]">Surname</label>
+            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">Surname</label>
             <input
               type="text"
               name="surName"
               placeholder="Doe"
               value={formData.surName}
               onChange={handleChange}
-              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text=[20px]"
+              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text-[20px]"
             />
           </div>
         </div>
@@ -118,7 +120,7 @@ export default function ContactClient() {
         {/* Email and Phone */}
         <div className="flex flex-col sm:flex-row gap-2">
           <div className="flex-1 flex flex-col">
-            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text=[20px]">Email Address*</label>
+            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">Email Address{" "}<span className="text-red-500">*</span></label>
             <input
               type="email"
               name="email"
@@ -126,30 +128,30 @@ export default function ContactClient() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text=[20px]"
+              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text-[20px]"
             />
           </div>
           <div className="flex-1 flex flex-col">
-            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text=[20px]">Phone Number</label>
+            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">Phone Number</label>
             <input
               type="tel"
               name="phone"
               placeholder="+44 123 456 7890"
               value={formData.phone}
               onChange={handleChange}
-              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text=[20px]"
+              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text-[20px]"
             />
           </div>
         </div>
 
         {/* Subject */}
         <div className="flex flex-col w-full">
-          <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text=[20px]">Subject</label>
+          <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">Subject{" "}<span className="text-red-500">*</span></label>
           <select
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className={`border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-sm text-[15px] 2xl:text=[20px] transition ${
+            className={`border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-[15px] 2xl:text-[20px] transition ${
               formData.subject === '' ? 'text-gray-400' : 'text-white'
             }`}
           >
@@ -167,7 +169,7 @@ export default function ContactClient() {
 
         {/* Message */}
         <div className="flex flex-col w-full">
-          <label className="text-white mb-1 font-bold uppercase text-[15px]">Message</label>
+          <label className="text-white mb-1 font-bold uppercase text-[15px]">Message{" "}<span className="text-red-500">*</span></label>
           <textarea
             name="message"
             placeholder="Your message here..."
@@ -175,7 +177,7 @@ export default function ContactClient() {
             onChange={handleChange}
             required
             rows={5}
-            className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 text-[15px]"
+            className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-white placeholder-gray-400 text-[15px]"
           />
         </div>
 
