@@ -3,42 +3,63 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ContactForm from '@/components/ContactForm';
+import Modal from '@/components/modal';
+import { EnvelopeIcon } from '@heroicons/react/24/solid';
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
-  // Detect scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // adjust threshold
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Reusable class for floating buttons (hamburger & contact)
+  const floatingButtonClass = `fixed w-14 h-14 flex items-center justify-center rounded-full
+    transition-all duration-300 ease-out cursor-pointer group z-50`;
+
+  const floatingCircleClass = (active: boolean) =>
+    `absolute -inset-3 rounded-full bg-white transition-all duration-300 ease-out ${
+      active
+        ? 'opacity-100 scale-110 shadow-lg'
+        : 'opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-lg'
+    }`;
+
   return (
     <>
-      {/* Hamburger Button (always visible) */}
+      {/* Contact Icon Button */}
+      <button
+        onClick={() => setIsContactOpen(true)}
+        className={`${floatingButtonClass} top-5 right-6`}
+      >
+        <span className={floatingCircleClass(isScrolled)} />
+        <EnvelopeIcon
+          className={`w-8 h-8 relative z-10 transition-transform duration-300 ${
+            isScrolled ? 'stroke-black group-hover:scale-110' : 'stroke-white group-hover:stroke-black group-hover:scale-110'
+          }`}
+        />
+      </button>
+
+      {/* Contact Modal */}
+      <Modal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)}>
+        <h2 className="text-xl font-bold mb-4">Contact Us</h2>
+        <ContactForm />
+      </Modal>
+
+      {/* Hamburger Button */}
       <button
         onClick={() => setIsMenuOpen(true)}
-        className={`fixed top-5 left-6 w-14 h-14 flex items-center justify-center rounded-full 
-                    transition-all duration-300 ease-out cursor-pointer group z-50`}
+        className={`${floatingButtonClass} top-5 left-6`}
       >
-        {/* White circle background */}
-        <span
-          className={`absolute -inset-3 rounded-full bg-white transition-all duration-300 ease-out
-                      ${isScrolled
-                        ? 'opacity-100 scale-110 shadow-lg' // bigger circle + shadow after scroll
-                        : 'opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-110 group-hover:shadow-lg'}`}
-        />
-
-        {/* Hamburger Icon */}
+        <span className={floatingCircleClass(isScrolled)} />
         <svg
-          className={`w-8 h-8 relative z-10 transition-transform duration-300
-                      ${isScrolled
-                        ? 'stroke-black group-hover:scale-110'
-                        : 'stroke-white group-hover:stroke-black group-hover:scale-110'}`}
+          className={`w-8 h-8 relative z-10 transition-transform duration-300 ${
+            isScrolled ? 'stroke-black group-hover:scale-110' : 'stroke-white group-hover:stroke-black group-hover:scale-110'
+          }`}
           fill="none"
           strokeWidth={2}
           viewBox="0 0 24 24"
@@ -47,11 +68,9 @@ export default function NavBar() {
         </svg>
       </button>
 
-      {/* Top Navbar & Logo (only visible when not scrolled) */}
+      {/* Logo */}
       {!isScrolled && (
-        <div
-          className="fixed top-5 left-0 w-full z-40 flex items-center justify-center px-6 py-4"
-        >
+        <div className="fixed top-5 left-0 w-full z-40 flex items-center justify-center px-6 py-4">
           <Image
             src="/Wingmen Logo.svg"
             alt="Wingmen Logo"
@@ -63,14 +82,11 @@ export default function NavBar() {
         </div>
       )}
 
-      {/* SLIDE-IN / SLIDE-OUT MENU */}
+      {/* Slide-in Menu */}
       <div
         className={`fixed inset-0 bg-[#292929] text-white flex flex-col items-start justify-start px-12 pt-24 gap-6 z-[9999]
-                    ${isMenuOpen
-                      ? 'translate-y-0 transition-transform duration-[400ms]'
-                      : '-translate-y-full transition-transform duration-[400ms]'}`}
+                    ${isMenuOpen ? 'translate-y-0 transition-transform duration-[400ms]' : '-translate-y-full transition-transform duration-[400ms]'}`}
       >
-        {/* Close Button */}
         <button
           onClick={() => setIsMenuOpen(false)}
           className="absolute top-6 right-6 w-16 h-16 flex items-center justify-center 
@@ -82,7 +98,6 @@ export default function NavBar() {
           &times;
         </button>
 
-        {/* Menu Links */}
         {[
           { href: '/', label: 'Home' },
           { href: '/who-we-are', label: 'Who We Are' },
