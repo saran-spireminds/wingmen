@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion, Variants, Transition } from "framer-motion";
+import Modal from "@/components/modal";
+import ContactClient from "../contact/ContactClient"; 
 
 // Define easing
 const ease: [number, number, number, number] = [0.43, 0.13, 0.23, 0.96];
@@ -21,6 +24,7 @@ const itemVariants: Variants = {
 };
 
 export default function WhoWeAreClient() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
       {/* HERO SECTION */}
@@ -186,7 +190,7 @@ export default function WhoWeAreClient() {
             custom={5}
           >
             <a
-              href="#readmore"
+              href="#our-values"
               className="relative inline-block px-[24px] py-[20px]
                          text-[15px] sm:text-[15px] md:text-[18px]
                          lg:text-[18px] xl:text-[18px] 2xl:text-[30px]
@@ -514,8 +518,9 @@ export default function WhoWeAreClient() {
             viewport={{ once: true, amount: 0.1 }}
             custom={3}
           >
-            <a
-              href="#readmore"
+            {/* Updated button to open modal */}
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="relative inline-block px-[24px] py-[20px]
                          text-[15px] sm:text-[15px] md:text-[18px]
                          lg:text-[18px] xl:text-[18px] 2xl:text-[30px]
@@ -537,10 +542,14 @@ export default function WhoWeAreClient() {
                            transition-all duration-300 pointer-events-none
                            group-hover:border-white"
               />
-            </a>
+            </button>
           </motion.div>
         </div>
       </section>
+      {/* CONTACT US MODAL */}
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+              <ContactClient />
+            </Modal>
 
       {/* OUR ETHOS SECTION */}
         <section className="relative w-full xl:h-screen bg-[#FFFEED] md:overflow-hidden">

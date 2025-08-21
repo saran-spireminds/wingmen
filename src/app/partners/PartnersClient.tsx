@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion, Variants, Transition } from "framer-motion";
+import Modal from "@/components/modal";
+import ContactClient from "../contact/ContactClient"; 
 
 // Define easing
 const ease: [number, number, number, number] = [0.43, 0.13, 0.23, 0.96];
@@ -21,6 +24,7 @@ const itemVariants: Variants = {
 };
 
 export default function PartnersClient() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
       {/* HERO SECTION */}
@@ -202,11 +206,9 @@ export default function PartnersClient() {
               viewport={{ once: true, amount: 0.1 }}
               custom={6}
             >
-              {/* Button*/}
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Updated button to open modal */}
+            <button
+              onClick={() => setIsModalOpen(true)}
                 className="relative inline-block px-[24px] py-[20px]
                            text-[15px] sm:text-[15px] md:text-[18px]
                            lg:text-[18px] xl:text-[18px] 2xl:text-[30px]
@@ -228,7 +230,7 @@ export default function PartnersClient() {
                              transition-all duration-300 pointer-events-none
                              group-hover:border-[#212121]"
                 />
-              </a>
+              </button>
             </motion.div>
           </div>
 
@@ -473,10 +475,9 @@ export default function PartnersClient() {
               viewport={{ once: true, amount: 0.1 }}
               custom={6}
             >
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Updated button to open modal */}
+            <button
+              onClick={() => setIsModalOpen(true)}
                 className="relative inline-block px-[24px] py-[20px]
                            text-[15px] sm:text-[15px] md:text-[18px]
                            lg:text-[18px] xl:text-[18px] 2xl:text-[30px]
@@ -498,12 +499,18 @@ export default function PartnersClient() {
                              transition-all duration-300 pointer-events-none
                              group-hover:border-[#212121]"
                 />
-              </a>
+              </button>
             </motion.div>
           </div>
         </div>
       </section>
       
+      {/* CONTACT US MODAL */}
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+              <ContactClient />
+            </Modal>
+      
+
       {/* OUR PARTNERS SECTION */}
       <section id="our-values" className="relative w-full bg-[#212121] overflow-hidden">
         {/* Overlay Image */}

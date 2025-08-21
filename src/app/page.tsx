@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion, Variants, Transition } from "framer-motion";
+import Modal from "@/components/modal";
+import ContactClient from "./contact/ContactClient"; 
 
 // Define easing
 const ease: [number, number, number, number] = [0.43, 0.13, 0.23, 0.96];
@@ -34,6 +37,7 @@ const patrons = [
 ];
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
       {/* HERO SECTION */}
@@ -252,7 +256,7 @@ export default function Home() {
             custom={5}
           >
             <a
-              href="#readmore"
+              href="/how-we-help"
               className="relative inline-block px-[24px] py-[20px] 
                          text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
                          xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
@@ -349,7 +353,7 @@ export default function Home() {
             custom={4}
           >
             <a
-              href="#readmore"
+              href="/who-we-are"
               className="relative inline-block px-[24px] py-[20px] 
                          text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
                          xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
@@ -482,7 +486,7 @@ export default function Home() {
             custom={5}
           >
             <a
-              href="#readmore"
+              href="/who-we-are#our-values"
               className="relative inline-block px-[24px] py-[20px] 
                          text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
                          xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
@@ -601,7 +605,7 @@ export default function Home() {
             custom={4}
           >
             <a
-              href="#readmore"
+              href="/fundraising#donate"
               className="relative inline-block px-[24px] py-[20px] 
                          text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
                          xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
@@ -682,7 +686,7 @@ export default function Home() {
             custom={4}
           >
             <a
-              href="#readmore"
+              href="/volunteer"
               className="relative inline-block px-[24px] py-[20px] 
                          text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
                          xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
@@ -810,7 +814,7 @@ export default function Home() {
             custom={4}
           >
             <a
-              href="#readmore"
+              href="/partners"
               className="relative inline-block px-[24px] py-[20px] 
                          text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
                          xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
@@ -889,13 +893,14 @@ export default function Home() {
             viewport={{ once: true, amount: 0.2 }}
             custom={4}
           >
-            <a
-              href="#readmore"
+            {/* Updated button to open modal */}
+            <button
+              onClick={() => setIsModalOpen(true)}
               className="relative inline-block px-[24px] py-[20px] 
                          text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
                          xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
                          uppercase border-2 border-white text-[#212121] overflow-hidden 
-                         group transition-all duration-500 ease-in-out"
+                         group transition-all duration-500 ease-in-out cursor-pointer"
             >
               <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
                 GET IN TOUCH
@@ -909,7 +914,7 @@ export default function Home() {
                 className="absolute inset-0 border border-transparent transition-all duration-300 
                            pointer-events-none group-hover:border-white"
               />
-            </a>
+            </button>
           </motion.div>
         </div>
 
@@ -937,6 +942,11 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {/* CONTACT US MODAL */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <ContactClient />
+      </Modal>
 
       {/* OUR PATRONS SECTION */}
       <section className="relative w-full min-h-[50vh] bg-[#FFFEED] overflow-hidden py-20">

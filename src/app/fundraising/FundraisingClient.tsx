@@ -168,7 +168,7 @@ export default function FundraisingClient() {
               custom={5}
             >
               <a
-                href="#readmore"
+                href="#donate"
                 className="relative inline-block px-[24px] py-[20px]
                            text-[15px] sm:text-[15px] md:text-[18px]
                            lg:text-[18px] xl:text-[18px] 2xl:text-[30px]
@@ -196,7 +196,7 @@ export default function FundraisingClient() {
       </section>
 
       {/* PATRONS SECTION */}
-      <section className="relative w-full bg-[#212121] overflow-hidden">
+      <section id="donate" className="relative w-full bg-[#212121] overflow-hidden">
         {/* Overlay Image */}
         <div className="absolute inset-0 w-full z-10">
           <Image
@@ -234,6 +234,7 @@ export default function FundraisingClient() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[50px] md:gap-20 items-top 
                               max-w-[1200px] 2xl:max-w-[2200px] mt-[50px] mb-[25px]">
                 {/* COLUMN-1 */}
+                <a href="https://www.gofundme.com/f/wingmen-were-here-to-listen?attribution_id=sl:c289dc79-6f20-4d34-8505-f7319a723fa4&lang=en_GB&utm_campaign=man_ss_icons&utm_medium=customer&utm_source=copy_link" target="_blank" rel="noopener noreferrer">
                 <motion.div
                   className="flex flex-col items-center max-w-[300px] 2xl:max-w-[2000px]"
                   variants={itemVariants}
@@ -255,6 +256,7 @@ export default function FundraisingClient() {
                       Donate a one-off amount to Wingmen
                     </p>
                 </motion.div>
+                </a>
                 
                 {/* COLUMN-2 */}
                 <motion.div
@@ -421,7 +423,7 @@ export default function FundraisingClient() {
                   <td className="border border-gray-500 p-4"></td>
                   <td className="border p-4 text-center w-[200px]">
                     <a
-                      href="https://example.com/donate1"
+                      href="https://pay.sumup.com/b2c/Q4FNQGQG"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-white text-[#212121] uppercase font-bold px-4 py-2 hover:bg-gray-500 hover:text-white transition"
@@ -431,7 +433,7 @@ export default function FundraisingClient() {
                   </td>
                   <td className="border p-4 text-center w-[200px]">
                     <a
-                      href="https://example.com/donate2"
+                      href="https://pay.sumup.com/b2c/QDODFQSV"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-white text-[#212121] uppercase font-bold px-4 py-2 hover:bg-gray-500 hover:text-white transition"
@@ -441,7 +443,7 @@ export default function FundraisingClient() {
                   </td>
                   <td className="border p-4 text-center w-[200px]">
                     <a
-                      href="https://example.com/donate3"
+                      href="https://pay.sumup.com/b2c/Q6OB4GLH"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-white text-[#212121] uppercase font-bold px-4 py-2 hover:bg-gray-500 hover:text-white transition"
