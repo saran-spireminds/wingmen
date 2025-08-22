@@ -87,41 +87,54 @@ export default function NavBar() {
       )}
 
       {/* Slide-in Menu */}
-      <div
-        className={`fixed inset-0 bg-[#292929] text-white flex flex-col items-start justify-start px-12 pt-24 gap-6 z-[9999]
-                    ${isMenuOpen ? 'translate-y-0 transition-transform duration-[400ms]' : '-translate-y-full transition-transform duration-[400ms]'}`}
-      >
-        <button
-          onClick={() => setIsMenuOpen(false)}
-          className="absolute top-6 right-6 w-16 h-16 flex items-center justify-center 
-                     rounded-full bg-white text-black text-5xl font-light 
-                     shadow-lg shadow-black/20 cursor-pointer 
-                     transition-all duration-300 ease-out
-                     hover:scale-110 hover:shadow-2xl hover:shadow-black/60"
-        >
-          &times;
-        </button>
+<div
+  className={`fixed inset-0 bg-[#292929] text-white 
+              flex flex-col items-start justify-start 
+              pl-30 pt-30 px-8 py-12 gap-4 z-[9999]
+              ${isMenuOpen ? 'translate-y-0 transition-transform duration-[400ms]' : '-translate-y-full transition-transform duration-[400ms]'}`}
+>
+  <button
+    onClick={() => setIsMenuOpen(false)}
+    className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center 
+               rounded-full bg-white text-black text-3xl font-light 
+               shadow-lg shadow-black/20 cursor-pointer 
+               transition-all duration-300 ease-out
+               hover:scale-110 hover:shadow-2xl hover:shadow-black/60"
+  >
+    &times;
+  </button>
 
-        {[
-          { href: '/', label: 'Home' },
-          { href: '/who-we-are', label: 'Who We Are' },
-          { href: '/how-we-help', label: 'How We Help' },
-          { href: '/fundraising', label: 'Fundraising' },
-          { href: '/our-patrons', label: 'Our Patrons' },
-          { href: '/partners', label: 'Partners' },
-          { href: '/volunteer', label: 'Volunteer' },
-          { href: '/resources', label: 'Resources' },
-        ].map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="text-[20px] md:text-[40px] font-extrabold uppercase tracking-wide hover:underline"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {item.label}
-          </Link>
-        ))}
-      </div>
+  {/* 👇 Wrap links in a group */}
+  <div className="flex flex-col gap-4 group">
+    {[
+      { href: '/', label: 'Home' },
+      { href: '/who-we-are', label: 'Who We Are' },
+      { href: '/how-we-help', label: 'How We Help' },
+      { href: '/fundraising', label: 'Fundraising' },
+      { href: '/our-patrons', label: 'Our Patrons' },
+      { href: '/partners', label: 'Partners' },
+      { href: '/volunteer', label: 'Volunteer' },
+      { href: '/resources', label: 'Resources' },
+    ].map((item) => (
+      <Link
+        key={item.href}
+        href={item.href}
+        className="text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] xl:text-[40px] 2xl:text-[60px]
+                   font-bold uppercase tracking-wide
+                   transition-all duration-300
+                   group-hover:opacity-30 hover:!opacity-100 hover:scale-110"
+        onClick={() => setIsMenuOpen(false)}
+      >
+        {item.label}
+      </Link>
+    ))}
+  </div>
+</div>
+
+
+
+
+
     </>
   );
 }
