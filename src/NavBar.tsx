@@ -115,7 +115,6 @@ export default function NavBar() {
       { href: '/partners', label: 'Partners' },
       { href: '/volunteer', label: 'Volunteer' },
       { href: '/resources', label: 'Resources' },
-      { href: '/resources', label: 'Resources di' },
     ].map((item) => (
       <Link
         key={item.href}
