@@ -119,7 +119,7 @@ export default function NavBar() {
       <Link
         key={item.href}
         href={item.href}
-        className="text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] xl:text-[40px] 2xl:text-[60px]
+        className="text-[20px] sm:text-[25px] md:text-[30px] lg:text-[35px] xl:text-[40px] 2xl:text-[50px]
                    font-bold uppercase tracking-wide
                    transition-all duration-300
                    group-hover:opacity-30 hover:!opacity-100 hover:scale-110"

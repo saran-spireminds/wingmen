@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -23,34 +24,52 @@ export default function ContactClient() {
   });
   const [status, setStatus] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('Sending...');
 
-    const res = await fetch('https://formspree.io/f/mnnzkrkp', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
-    });
+    // --- Validate required fields ---
+    const requiredFields = ["firstName", "surName", "email", "subject", "message"] as const;
+    for (const field of requiredFields) {
+      if (!formData[field].trim()) {
+        setStatus(`❌ ${field.replace(/([A-Z])/g, " $1")} is required.`);
+        return;
+      }
+    }
 
-    if (res.ok) {
-      setStatus('Message sent successfully!');
-      setFormData({
-        firstName: '',
-        surName: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: '',
+    setStatus("Sending...");
+
+    try {
+      // --- Send to backend (SuiteDash) ---
+      await fetch("/api/suitedash", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-    } else {
-      setStatus('Failed to send message. Try again.');
+
+      // ✅ Show success regardless of SuiteDash response
+      setStatus("✅ Message sent successfully!");
+
+      // --- Reset form ---
+      setFormData({
+        firstName: "",
+        surName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus("❌ Something went wrong. Please try again later.");
     }
   };
+
 
   return (
     <div className="w-full flex flex-col gap-1 text-left px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14">
@@ -92,26 +111,29 @@ export default function ContactClient() {
         <div className="flex flex-col sm:flex-row gap-2">
           <div className="flex-1 flex flex-col">
             <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">
-  First Name{" "}<span className="text-red-500">*</span>
-</label>
-<input
-  type="text"
-  name="firstName"
-  placeholder="John"
-  value={formData.firstName}
-  onChange={handleChange}
-  required
-  className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text-[20px]"
-/>
+              First Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="John"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+              className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text-[20px]"
+            />
           </div>
           <div className="flex-1 flex flex-col">
-            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">Surname</label>
+            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">
+              Surname <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
               name="surName"
               placeholder="Doe"
               value={formData.surName}
               onChange={handleChange}
+              required
               className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-white placeholder-gray-400 text-[15px] 2xl:text-[20px]"
             />
           </div>
@@ -120,7 +142,9 @@ export default function ContactClient() {
         {/* Email and Phone */}
         <div className="flex flex-col sm:flex-row gap-2">
           <div className="flex-1 flex flex-col">
-            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">Email Address{" "}<span className="text-red-500">*</span></label>
+            <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">
+              Email Address <span className="text-red-500">*</span>
+            </label>
             <input
               type="email"
               name="email"
@@ -146,11 +170,14 @@ export default function ContactClient() {
 
         {/* Subject */}
         <div className="flex flex-col w-full">
-          <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">Subject{" "}<span className="text-red-500">*</span></label>
+          <label className="text-white mb-1 font-bold uppercase text-[15px] 2xl:text-[20px]">
+            Subject <span className="text-red-500">*</span>
+          </label>
           <select
             name="subject"
             value={formData.subject}
             onChange={handleChange}
+            required
             className={`border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#212121] bg-white/10 backdrop-blur-[2px] sm:backdrop-blur-sm text-[15px] 2xl:text-[20px] transition ${
               formData.subject === '' ? 'text-gray-400' : 'text-white'
             }`}
@@ -169,7 +196,9 @@ export default function ContactClient() {
 
         {/* Message */}
         <div className="flex flex-col w-full">
-          <label className="text-white mb-1 font-bold uppercase text-[15px]">Message{" "}<span className="text-red-500">*</span></label>
+          <label className="text-white mb-1 font-bold uppercase text-[15px]">
+            Message <span className="text-red-500">*</span>
+          </label>
           <textarea
             name="message"
             placeholder="Your message here..."
@@ -185,25 +214,17 @@ export default function ContactClient() {
         <div className="flex justify-start">
           <button
             type="submit"
-            className="relative inline-block px-6 py-5 
-                       text-[18px] 
-                       font-heading font-bold tracking-wide mt-2 
-                       uppercase border border-white text-[#212121] 
-                       overflow-hidden group transition-all duration-500 ease-in-out"
+            className="relative inline-block px-6 py-5 text-[18px] font-heading font-bold tracking-wide mt-2 uppercase border border-white text-[#212121] overflow-hidden group transition-all duration-500 ease-in-out"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
               SEND MESSAGE
             </span>
             <span
-              className="absolute inset-0 bg-white 
-                         transition-transform duration-500 ease-in-out 
-                         transform translate-x-0 group-hover:translate-x-full"
+              className="absolute inset-0 bg-white transition-transform duration-500 ease-in-out transform translate-x-0 group-hover:translate-x-full"
               aria-hidden="true"
             />
             <span
-              className="absolute inset-0 border border-transparent 
-                         transition-all duration-300 pointer-events-none 
-                         group-hover:border-white"
+              className="absolute inset-0 border border-transparent transition-all duration-300 pointer-events-none group-hover:border-white"
             />
           </button>
         </div>
