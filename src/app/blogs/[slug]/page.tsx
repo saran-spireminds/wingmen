@@ -1,31 +1,49 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import ArticleContentClient from "./ArticleContentClient";
 
-type KnowledgeBasePageProps = {
+// 🧠 Type for params
+interface PageProps {
   params: Promise<{ slug: string }>;
-};
+}
 
-export default async function KnowledgeBaseArticle({ params }: KnowledgeBasePageProps) {
+// 🏗️ Generate static paths for all markdown files in /content/blogs
+export async function generateStaticParams() {
+  const dir = path.join(process.cwd(), "content", "blogs");
+  if (!fs.existsSync(dir)) return [];
+  const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mdx"));
+  return files.map((file) => ({
+    slug: file.replace(/\.mdx$/, ""),
+  }));
+}
+
+// 🚀 The actual blog page
+export default async function BlogPage({ params }: PageProps) {
+  // ✅ Next.js 15+ params are Promises
   const { slug } = await params;
 
-  const base = process.env.NEXT_PUBLIC_STRAPI_URL;
-  const url = `${base}/api/articles?filters[slug][$eq]=${encodeURIComponent(
-    slug
-  )}&populate=*`;
+  const filePath = path.join(process.cwd(), "content", "blogs", `${slug}.mdx`);
 
-  const res = await fetch(url, { cache: "no-store" });
-  const data = await res.json();
-
-  if (!data?.data || data.data.length === 0) {
-    return <h1>No article found for slug: {slug}</h1>;
+  if (!fs.existsSync(filePath)) {
+    return <h1>Article not found</h1>;
   }
 
-  const article = data.data[0];
+  const fileData = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(fileData);
 
-  // Get cover image URL (prepend base URL if relative)
-  const coverUrl =
-    article.coverImage?.data?.attributes?.url
-      ? `${base}${article.coverImage.data.attributes.url}`
-      : "/default-cover.jpg";
+  const article = {
+    title: data.title || "Untitled Article",
+    cover: {
+      url: data.cover || "/default-cover.jpg",
+      formats: {
+        large: { url: data.cover || "/default-cover.jpg" },
+      },
+    },
+    blocks: [{ body: content }],
+  };
+
+  const coverUrl = data.cover || "/default-cover.jpg";
 
   return <ArticleContentClient article={article} coverUrl={coverUrl} />;
 }

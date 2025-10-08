@@ -5,7 +5,7 @@ const localArticles = [
   {
     id: "1",
     title: "HOW CAN I HELP SOMEONE THAT IS IN NEED?",
-    description: "Please note that what follows is subjective advice, and is to be taken as a simple guide if you are concerned about someone you know. We have arranged this article as a Q&A in order to make it easy for you to find the right information for your circumstance.",
+    description: "A Q&A-style guide offering practical advice on how to support someone who may be struggling or in crisis.",
     slug: "how-can-i-help-someone-in-need",
     cover: { url: "/mental-health-partners.jpg" },
   },
@@ -16,9 +16,16 @@ const localArticles = [
     slug: "what-is-anxiety",
     cover: { url: "/who-we-are.jpg" },
   },
+  {
+    id: "3",
+    title: "WHAT IS DEPRESSION?",
+    description: "An article exploring what depression really means, its symptoms, and how to help someone experiencing it.",
+    slug: "what-is-depression",
+    cover: { url: "/partner-wingmen.jpg" },
+  },
 ];
 
-// Example blogs (from Strapi or static for now)
+// Example local MDX articles
 const blogArticles = [
   {
     id: "101",
@@ -27,9 +34,9 @@ const blogArticles = [
     slug: "lessons-from-judo-vulnerability-can-be-a-sign-of-mental-strength",
     cover: { url: "/Partners.jpg" },
   },
-   {
+  {
     id: "102",
-    title: "MEN’S MENTAL HEALTH IS NO LONGER STIGMATISED",
+    title: "MEN'S MENTAL HEALTH IS NO LONGER STIGMATISED",
     description: "Exploring how men’s mental health has evolved from stigma and silence to openness and support.",
     slug: "mens-mental-health-is-no-longer-stigmatised",
     cover: { url: "/mental-health.jpg" },
@@ -40,6 +47,13 @@ const blogArticles = [
     description: "A summary and reflection on the UK’s new national suicide prevention strategy and Wingmen’s perspective on its impact.",
     slug: "new-announcement-the-national-suicide-prevention-strategy",
     cover: { url: "/national-suicide-prevention.jpg" },
+  },
+  {
+    id: "104",
+    title: "WHY BOTHER TALKING? A PERSONAL OPINION",
+    description: "A personal reflection on why talking and being listened to can be a powerful part of understanding ourselves and making a recovery.",
+    slug: "why-bother-talking-a-personal-opinion",
+    cover: { url: "/volunteer-with-wingmen.jpg" },
   },
 ];
 
