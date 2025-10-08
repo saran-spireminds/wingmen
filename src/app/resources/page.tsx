@@ -34,6 +34,13 @@ const blogArticles = [
     slug: "mens-mental-health-is-no-longer-stigmatised",
     cover: { url: "/mental-health.jpg" },
   },
+  {
+    id: "103",
+    title: "NEW ANNOUNCEMENT: THE NATIONAL SUICIDE PREVENTION STRATEGY",
+    description: "A summary and reflection on the UK’s new national suicide prevention strategy and Wingmen’s perspective on its impact.",
+    slug: "new-announcement-the-national-suicide-prevention-strategy",
+    cover: { url: "/national-suicide-prevention.jpg" },
+  },
 ];
 
 export default function ResourcesPage() {
