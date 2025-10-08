@@ -27,6 +27,13 @@ const blogArticles = [
     slug: "lessons-from-judo-vulnerability-can-be-a-sign-of-mental-strength",
     cover: { url: "/Partners.jpg" },
   },
+   {
+    id: "102",
+    title: "MEN’S MENTAL HEALTH IS NO LONGER STIGMATISED",
+    description: "Exploring how men’s mental health has evolved from stigma and silence to openness and support.",
+    slug: "mens-mental-health-is-no-longer-stigmatised",
+    cover: { url: "/mental-health.jpg" },
+  },
 ];
 
 export default function ResourcesPage() {
