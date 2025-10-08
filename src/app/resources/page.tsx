@@ -22,10 +22,10 @@ const localArticles = [
 const blogArticles = [
   {
     id: "101",
-    title: "Importance of Sleep",
-    description: "How sleep impacts mental health.",
-    slug: "importance-of-sleep",
-    cover: { url: "/blog-cover-1.jpg" },
+    title: "LESSONS FROM JUDO: VULNERABILITY CAN BE A SIGN OF MENTAL STRENGTH",
+    description: "In this article we see how it is possible to turn a perceived weakness into a mental strength.",
+    slug: "lessons-from-judo-vulnerability-can-be-a-sign-of-mental-strength",
+    cover: { url: "/partners.jpg" },
   },
 ];
 
