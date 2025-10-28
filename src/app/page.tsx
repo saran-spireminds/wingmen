@@ -134,36 +134,40 @@ export default function Home() {
           </motion.p>
 
           {/* Hero Button */}
-          <motion.div
-            className="mt-[25px]"
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            custom={5}
-          >
-            <a
-              href="tel:+441135477636"
-              className="relative inline-block px-[24px] py-[20px] 
-                         text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
-                         xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
-                         uppercase border-2 border-white text-[#212121] overflow-hidden 
-                         group transition-all duration-500 ease-in-out"
-            >
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-                CALL US: +44 1135 477636
-              </span>
-              <span
-                className="absolute inset-0 bg-[#ffffff] transition-transform duration-500 
-                           ease-in-out transform translate-x-0 group-hover:translate-x-full"
-                aria-hidden="true"
-              />
-              <span
-                className="absolute inset-0 border border-transparent transition-all duration-300 
-                           pointer-events-none group-hover:border-white"
-              />
-            </a>
-          </motion.div>
+<motion.div
+  className="mt-[25px]"
+  variants={itemVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+  custom={5}
+>
+  <a
+    href="https://app.suitedash.com/frm/2sbfA2bb7t8S6z4Cv" // 🔗 replace this with your actual SuiteDash booking link
+    target="_blank"
+    rel="noopener noreferrer"
+    className="relative inline-block px-[24px] py-[20px] 
+               text-[15px] sm:text-[15px] md:text-[18px] lg:text-[18px] 
+               xl:text-[18px] 2xl:text-[30px] mb-[24px] font-heading font-bold tracking-widest 
+               uppercase border-2 border-white text-[#212121] overflow-hidden 
+               group transition-all duration-500 ease-in-out"
+  >
+    <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+      Schedule a call with us
+    </span>
+    <span
+      className="absolute inset-0 bg-[#ffffff] transition-transform duration-500 
+                 ease-in-out transform translate-x-0 group-hover:translate-x-full"
+      aria-hidden="true"
+    />
+    <span
+      className="absolute inset-0 border border-transparent transition-all duration-300 
+                 pointer-events-none group-hover:border-white"
+    />
+  </a>
+</motion.div>
+
+          
         </div>
       </section>
 
